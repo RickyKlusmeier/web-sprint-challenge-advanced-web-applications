@@ -1,11 +1,11 @@
 import Axios from "axios";
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { useHistory } from "react-router";
 
 
 const initialState = {
-  username: '',
-  password: ''
+  username: 'Lambda',
+  password: 'i<3Lambd4'
 }
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
 
   const {push} = useHistory()
 
-  useEffect(()=>{
+  useEffect((evt)=>{
     evt.preventDefault()
     Axios.post('http://localhost:5000/api/login', user)
     .then(res => {
